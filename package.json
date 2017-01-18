@@ -17,11 +17,10 @@
   },
   "homepage": "https://github.com/jangot/test-rest#readme",
   "dependencies": {
-    "command-line-args": "^3.0.5",
+    "command-line-args": "3.0.5",
     "config": "1.24.0",
     "js-yaml": "3.7.0",
     "lodash": "4.17.4",
-    "pg": "6.1.2",
-    "route-parser": "0.0.5"
+    "pg": "6.1.2"
   }
 }
