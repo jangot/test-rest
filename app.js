@@ -34,8 +34,6 @@ http
                 res.end(JSON.stringify(result));
             })
             .catch((err) => {
-                console.log('--------------');
-                console.log(err);
                 if (err.code) {
                     res.writeHead(err.code);
                     delete err.code;

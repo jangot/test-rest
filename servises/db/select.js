@@ -4,6 +4,10 @@ const _ = require('lodash');
 const db = require('./index');
 
 module.exports = function(table, fields, where, limit, offset) {
+    if (!_.isArray(fields)) {
+        fields = [fields];
+    }
+
     let query = `SELECT ${fields.join(',')} from ${table}`;
     let values = [];
 
@@ -45,8 +49,6 @@ module.exports = function(table, fields, where, limit, offset) {
 
     query += ';';
 
-    console.log(query);
-    console.log(values);
     return db
         .query(query, values)
         .then((result) => {

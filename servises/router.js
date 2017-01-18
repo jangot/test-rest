@@ -1,5 +1,7 @@
 "use strict";
 
+const _ = require('lodash');
+
 const RESOURCE_FOLDER = '../resource';
 
 const errorPromise = {
@@ -12,6 +14,7 @@ module.exports = (requestParams) => {
 
     let resourceName = urlArray[1];
     let resourceId = urlArray[2];
+    let method = urlArray[3] ? _.camelCase(urlArray[3]) : false;
 
     let resource;
     try {
@@ -41,6 +44,9 @@ module.exports = (requestParams) => {
                 return errorPromise.idIsNotExist;
             }
 
+            if (method) {
+                return resource[method](resourceId, requestParams.query);
+            }
             return resource.update(resourceId, requestParams.query);
             break;
 
