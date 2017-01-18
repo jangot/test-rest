@@ -1,0 +1,27 @@
+{
+  "name": "test-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jangot/test-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jangot/test-rest/issues"
+  },
+  "homepage": "https://github.com/jangot/test-rest#readme",
+  "dependencies": {
+    "command-line-args": "^3.0.5",
+    "config": "1.24.0",
+    "js-yaml": "3.7.0",
+    "lodash": "4.17.4",
+    "pg": "6.1.2",
+    "route-parser": "0.0.5"
+  }
+}
