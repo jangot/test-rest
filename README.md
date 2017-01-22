@@ -47,8 +47,11 @@ Get unique levels of users
 
 ## Examples
 PUT: http://localhost:8080/user/ - create user with default values.
+
 POST: http://localhost:8080/user/:id/next-level - move user to next level.
+
 GET: http://localhost:8080/user?level=2 - all users of the second level. The result has coins.
+
 PUT: http://localhost:8080/level/ - get all unique levels (There is not limit and offset)
 
 
