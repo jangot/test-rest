@@ -21,6 +21,7 @@ There is no way to down migrations.
 
 ### GET
 `http://localhost:8080/:resource?[limit=:n]&[offset=:n]&[:someFieldName=:someFieldValue]` - get documents list
+
 `http://localhost:8080/:resource/:id` - get a document by id
 
 ### PUT
@@ -28,6 +29,7 @@ There is no way to down migrations.
 
 ### POST
 `http://localhost:8080/:resource/:id` - update a document
+
 `http://localhost:8080/:resource/:id/:method` - update a document by special method 
 
 ### DELETE
