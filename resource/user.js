@@ -22,8 +22,8 @@ module.exports = {
 
         let result = {
             meta: {
-                limit,
-                offset
+                limit: Number(limit),
+                offset: Number(offset)
             }
         };
         let countPromise = select(CONSTANT.TABLE.USER.NAME, ['count(*)'], params)

@@ -16,7 +16,7 @@ module.exports = {
                 let row = _.get(result, 'rows');
 
                 if (!row) {
-                    throw {code: 503, message: 'Unknown error'};
+                    row = [];
                 }
 
                 return {
