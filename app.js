@@ -1,11 +1,13 @@
 "use strict";
 
 const http = require('http');
+const querystring = require('querystring');
 const url = require('url');
 const config = require('config');
 const router = require('./servises/router');
 
 const PORT = config.get('server.port');
+const _ = require('lodash');
 
 http
     .createServer((req, res) => {
@@ -13,7 +15,7 @@ http
 
         if (req.method == 'OPTIONS') {
             res.writeHead(200, {
-                'Content-Type': 'text/plain',
+                'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Request-Method': 'POST, GET, PUT, DELETE, OPTIONS',
                 'Access-Control-Allow-Credentials': true
@@ -28,9 +30,15 @@ http
             path: urlObject.pathname
         };
 
-        router(requestParams)
+        getBody(req)
+            .then((body) => {
+                requestParams.body = body;
+                console.log(body);
+
+                return router(requestParams);
+            })
             .then((result) => {
-                res.writeHead(200, {'Content-Type': 'text/plain'});
+                res.writeHead(200, {'Content-Type': 'application/json'});
                 res.end(JSON.stringify(result));
             })
             .catch((err) => {
@@ -47,3 +55,26 @@ http
     .listen(PORT);
 
 console.log(`Server running on port ${PORT}.`);
+
+function getBody(request) {
+    return new Promise((resolve, reject) => {
+        var body = [];
+        request
+            .on('data', function(chunk) {
+                body.push(chunk);
+            })
+            .on('error', (e) => {
+                reject(e);
+            })
+            .on('end', function() {
+                body = Buffer.concat(body).toString();
+                try {
+                    body = JSON.parse(body);
+                } catch (e) {
+                    body = querystring.parse(body);
+                }
+
+                resolve(body);
+            });
+    });
+}

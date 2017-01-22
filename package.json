@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jangot/test-rest#readme",
   "dependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "command-line-args": "3.0.5",
     "config": "1.24.0",
     "js-yaml": "3.7.0",

@@ -36,7 +36,7 @@ module.exports = (requestParams) => {
             break;
 
         case 'PUT':
-            return resource.create(requestParams.query);
+            return resource.create(requestParams.body);
             break;
 
         case 'POST':
@@ -45,9 +45,9 @@ module.exports = (requestParams) => {
             }
 
             if (method) {
-                return resource[method](resourceId, requestParams.query);
+                return resource[method](resourceId, requestParams.body);
             }
-            return resource.update(resourceId, requestParams.query);
+            return resource.update(resourceId, requestParams.body);
             break;
 
         case 'DELETE':
