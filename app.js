@@ -33,7 +33,6 @@ http
         getBody(req)
             .then((body) => {
                 requestParams.body = body;
-                console.log(body);
 
                 return router(requestParams);
             })

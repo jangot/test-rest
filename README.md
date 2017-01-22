@@ -1,4 +1,4 @@
-# Test
+# Test-app
 ## Requirements
 + `node 6.0.0`
 + `PostgreSQL 9.6.1` (I didn't test in prev versions)
@@ -14,8 +14,12 @@ There is no way to down migrations.
 
 ## Run
 1. `npm install`
-2. `node app.js`
+2. `npm start`
 3. Open: <http://localhost:8080/user>
+
+## Test
+1. `npm install mocha --global`
+2. `npm test`
 
 ## Rest api
 

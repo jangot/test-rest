@@ -2,23 +2,24 @@
   "name": "test-rest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jangot/test-rest.git"
   },
-  "author": "",
+  "author": "jangot",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jangot/test-rest/issues"
   },
   "homepage": "https://github.com/jangot/test-rest#readme",
   "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
+    "chai": "3.5.0",
+    "chai-http": "3.0.0",
     "command-line-args": "3.0.5",
     "config": "1.24.0",
     "js-yaml": "3.7.0",
